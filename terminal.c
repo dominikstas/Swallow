@@ -3,14 +3,14 @@
 #include <string.h>
 #include "commands.h"
 
-#define MAX_INPUT_LENGTH 1000 // 
+#define MAX_INPUT_LENGTH 1000 
 
 void init(){
     system("clear");
     printf("Welcome to Swallow!\n");
 }
 
-char* input(){
+char* getInput(){
     char *input = NULL;
     size_t bufferSize = 0;
 
@@ -26,7 +26,7 @@ int main() {
     init();
     while(1){
         printf(">");
-        command = input();
+        command = getInput();
 
         if(strlen(command) != 0){
             execute(command);

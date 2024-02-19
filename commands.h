@@ -2,7 +2,7 @@
 #define COMMANDS_H
 
 void execute(char *command);
-void echo();
+void echo(char *text);
 void exitS();
 void help();
 
