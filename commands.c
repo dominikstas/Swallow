@@ -4,8 +4,7 @@
 #include "commands.h"
 
 void execute(char *command) {
-    if (strncmp(command, "echo ", 5) == 0) {
-        // to do: fix usage error
+    if (strncmp(command, "echo ", 4) == 0) {
         char *text = command + 5; 
         if (strlen(text) > 0) {
             echo(text);
