@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "commands.h"
+#include "Arduino/tests.h"
 
 void execute(char *command) {
     if (strncmp(command, "echo ", 4) == 0) {
@@ -15,13 +16,16 @@ void execute(char *command) {
         exitS();
     } else if (strcmp(command, "help") == 0) {
         help();
-    } else {
+    } else if (strcmp(command, "test") == 0) {
+        LEDTest();
+    }
+    
+    else {
         printf("Unknown command: %s\n", command);
     }
 }
 
 void echo(char *text) {
-    // Wypisz tekst
     printf("%s\n", text);
 }
 
@@ -31,6 +35,8 @@ void exitS() {
 }
 
 void help() {
+    //To do: corrections
     printf("All commands:\n");
     printf("echo [text] - write a text\nexit - turn off Swallow\nhelp - show all commands\n");
+    printf("test - LED 7 blinks test\n");
 }
