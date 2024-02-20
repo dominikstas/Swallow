@@ -35,8 +35,11 @@ void exitS() {
 }
 
 void help() {
-    //To do: corrections
+    printf("--------------------------------------\n");
     printf("All commands:\n");
-    printf("echo [text] - write a text\nexit - turn off Swallow\nhelp - show all commands\n");
-    printf("test - LED 7 blinks test\n");
+    printf("help - show all commands\n");
+    printf("echo [text] - write a text\n");
+    printf("test - LED test (blinks seven times) \n");
+    printf("exit - turn off Swallow\n");
+    printf("--------------------------------------\n");
 }
