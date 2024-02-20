@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "commands.h"
+#include "detect.h"
 
 #define MAX_INPUT_LENGTH 1000 
 
@@ -24,6 +25,11 @@ char* getInput(){
 int main() {
     char *command;
     init();
+    if (detectMicrocontroller() == 0) {
+        printf("Microcontroller detected!\n");
+    } else {
+        printf("No microcontroller detected.\n");
+    }
     while(1){
         printf(">");
         command = getInput();
