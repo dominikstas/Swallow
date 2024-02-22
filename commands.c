@@ -45,7 +45,7 @@ void help() {
     printf("All commands:\n");
     printf("help - show all commands\n");
     printf("echo [text] - write a text\n");
-    printf("test - LED test (blinks seven times) \n");
+    printf("led [times] - LED blink test. \n");
     printf("exit - turn off Swallow\n");
     printf("--------------------------------------\n");
 }
