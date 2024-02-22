@@ -1,6 +1,6 @@
 #ifndef TESTS_H
 #define TESTS_H
 
-void LEDTest();
+void LEDTest(int times);
 
 #endif

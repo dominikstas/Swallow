@@ -16,10 +16,16 @@ void execute(char *command) {
         exitS();
     } else if (strcmp(command, "help") == 0) {
         help();
-    } else if (strcmp(command, "test") == 0) {
-        LEDTest();
-    }
-    
+    } else if (strncmp(command, "led ", 3) == 0) {
+        char *timesStr = command + 4;
+        int times = atoi(timesStr);
+
+        // Check if a valid integer was provided
+        if (times > 0) {
+            LEDTest(times);
+        } else {
+            printf("Usage: led [times]\n");
+        }}
     else {
         printf("Unknown command: %s\n", command);
     }

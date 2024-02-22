@@ -4,7 +4,7 @@
 #include <termios.h>
 
 // Function to test LED functionality
-void LEDTest() {
+void LEDTest(int times) {
     // to do: blink x times
 
     // Open the serial port associated with Arduino (Assuming it's /dev/ttyACM0)
@@ -25,7 +25,7 @@ void LEDTest() {
     tcsetattr(fd, TCSANOW, &options);
 
     // Blink the PB5 diode  on Arduino 7 times
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < times; i++) {
         write(fd, "Blink", 5);
         sleep(1);
     }
