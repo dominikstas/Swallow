@@ -5,7 +5,6 @@
 
 // Function to test LED functionality
 void LEDTest(int times) {
-    // to do: blink x times
 
     // Open the serial port associated with Arduino (Assuming it's /dev/ttyACM0)
     // To do: make it avaliable to change the port

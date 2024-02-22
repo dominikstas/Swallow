@@ -24,8 +24,8 @@ int detectMicrocontroller() {
         
         // Check if the error is due to permission denied
         if (errno == EACCES) {
-            printf("Permission denied. You may need to run the program with elevated privileges.\n");
-            printf("Try using 'sudo chmod a+rw /dev/[port]' or 'sudo usermod -a -G uucp $user' before your command.\n");
+            printf("\nPermission denied. You may need to run the program with elevated privileges.\n");
+            printf("Try using 'sudo chmod a+rw /dev/[port]' or 'sudo usermod -a -G uucp $user' \nbefore your command.\n");
         }
         
         return 1; 
