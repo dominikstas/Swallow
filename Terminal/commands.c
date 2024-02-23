@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "commands.h"
-#include "Arduino/tests.h"
+#include "../Arduino/tests.h"
 
 void execute(char *command) {
     if (strncmp(command, "echo ", 4) == 0) {
