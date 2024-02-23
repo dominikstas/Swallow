@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
+#include "tests.h"
 
 // Function to test LED functionality
 void LEDTest(int times) {
