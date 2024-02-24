@@ -49,6 +49,7 @@ void help() {
     printf("help - show all commands\n");
     printf("echo [text] - write a text\n");
     printf("led [times] - LED blink test. \n");
+    printf("memory - estimate available memory on Arduino (approximate)\n");
     printf("exit - turn off Swallow\n");
     printf("--------------------------------------\n");
 }
