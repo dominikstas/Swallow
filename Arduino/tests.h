@@ -2,5 +2,6 @@
 #define TESTS_H
 
 void LEDTest(int times);
+void checkArduinoMemory();
 
 #endif

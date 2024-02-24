@@ -25,7 +25,10 @@ void execute(char *command) {
             LEDTest(times);
         } else {
             printf("Usage: led [times]\n");
-        }}
+        }
+    } else if ((strcmp(command, "memory") == 0)) {
+        checkArduinoMemory();
+    }
     else {
         printf("Unknown command: %s\n", command);
     }

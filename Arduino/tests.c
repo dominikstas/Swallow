@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
+#include <stdlib.h>
 #include "tests.h"
 
 // Function to test LED functionality
@@ -36,4 +37,23 @@ void LEDTest(int times) {
     // Print a success message
     printf("Test successful\n");
     return;
+}
+
+void checkArduinoMemory() {
+    // Create a dynamic array to estimate available memory
+    int* dummyArray = malloc(1000 * sizeof(int));
+
+    if (dummyArray == NULL) {
+        perror("Error allocating memory");
+        return;
+    }
+
+    // Calculate the amount of available memory
+    size_t availableMemory = 1000 * sizeof(int);
+
+    // Free dynamically allocated memory
+    free(dummyArray);
+
+    // Display information about available memory
+    printf("Estimated Available Memory: %zu bytes\n", availableMemory);
 }
