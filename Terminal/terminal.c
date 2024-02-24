@@ -28,7 +28,8 @@ int main() {
     if (detectMicrocontroller() == 0) {
         printf("Microcontroller detected!\n");
     } else {
-        printf("No microcontroller detected.\n");
+        printf("No microcontroller detected. Check connecion and try again.\n");
+        exit(1);
     }
     while(1){
         printf(">");
