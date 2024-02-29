@@ -40,6 +40,9 @@ void LEDTest(int times) {
 }
 
 void checkArduinoMemory() {
+    //this code aint working 
+    //to do: create another solution
+
     // Create a dynamic array to estimate available memory
     int* dummyArray = malloc(1000 * sizeof(int));
 

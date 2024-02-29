@@ -52,11 +52,20 @@ void help() {
     printf("echo [text] - write a text\n");
     printf("led [times] - LED blink test. \n");
     printf("memory - estimate available memory on Arduino (approximate)\n");
+    printf("run - run diode code. \n"); //to be changed
     printf("exit - turn off Swallow\n");
     printf("--------------------------------------\n");
 }
 
 void runArduinoCode() {
-    system("arduino-cli compile --fqbn arduino:avr:uno ../Arduino/obc-sets/diodes.ino");
-    system("arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno");
+    //to do: take the set as an argument
+    //to do: fix all the bugs this code generate
+    const char *arduinoCodePath = "../Arduino/obc-sets/diodes/diodes.ino";
+
+    char command[256];
+    snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno %s", arduinoCodePath);
+    system(command);
+
+    snprintf(command, sizeof(command), "arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno");
+    system(command);
 }
