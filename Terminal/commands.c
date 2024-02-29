@@ -28,8 +28,10 @@ void execute(char *command) {
         }
     } else if ((strcmp(command, "memory") == 0)) {
         checkArduinoMemory();
-    }
-    else {
+    } else if (strcmp(command, "run") == 0) {
+        runArduinoCode();
+    
+    } else {
         printf("Unknown command: %s\n", command);
     }
 }
@@ -52,4 +54,9 @@ void help() {
     printf("memory - estimate available memory on Arduino (approximate)\n");
     printf("exit - turn off Swallow\n");
     printf("--------------------------------------\n");
+}
+
+void runArduinoCode() {
+    system("arduino-cli compile --fqbn arduino:avr:uno ../Arduino/obc-sets/diodes.ino");
+    system("arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno");
 }

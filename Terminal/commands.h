@@ -5,5 +5,6 @@ void execute(char *command);
 void echo(char *text);
 void exitS();
 void help();
+void runArduinoCode();
 
 #endif
