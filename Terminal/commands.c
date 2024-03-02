@@ -60,7 +60,7 @@ void help() {
 void runArduinoCode() {
     //to do: take the set as an argument
     //to do: fix all the bugs this code generate
-    const char *arduinoCodePath = "../Arduino/obc-sets/diodes/diodes.ino";
+    const char *arduinoCodePath = "../Arduino/obc-sets/clear/clear.ino";
 
     char command[256];
     snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno %s", arduinoCodePath);
