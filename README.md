@@ -28,6 +28,7 @@ Note: You can also `make` command, and skip the CMake, but one day i will stop u
 ## Project Structure:
 - **Terminal:** Contains the main CLI components.
 - **Arduino:** Stores Arduino-related code and tests.
+- **Arduino/obc-sets** Examples of code, that i wrote for the on-board computers for UAV and rockets. Before running, better check the code for info about setup
 
 ## Contributing:
 Contributions are more than welcome!
