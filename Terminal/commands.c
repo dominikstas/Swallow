@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+
 #include "commands.h"
 #include "../Arduino/tests.h"
+
+
+
 
 void execute(char *command) {
     if (strncmp(command, "echo ", 4) == 0) {
@@ -63,12 +68,16 @@ void runArduinoCode() {
     //to do: correct readme after fixing this function
     //to do: take the set as an argument
     //to do: fix all the bugs this code generate
-    const char *arduinoCodePath = "../Arduino/obc-sets/diodes/diodes.ino";
+    const char *arduinoCodePath = "../Arduino/obc-sets/diodes";
 
     char command[256];
-    snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno %s", arduinoCodePath);
+    chdir(arduinoCodePath);
+    snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno");
     system(command);
 
     snprintf(command, sizeof(command), "arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno");
     system(command);
+
+    const char *reset = "../../../build";
+    chdir(reset);
 }

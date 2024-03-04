@@ -3,8 +3,10 @@
 #include <unistd.h>
 #include <termios.h>
 #include <stdlib.h>
-#include "tests.h"
 #include <unistd.h>
+
+#include "tests.h"
+
 
 // Function to test LED functionality
 void LEDTest(int times) {
@@ -64,14 +66,14 @@ void checkArduinoMemory() {
 
 //to do: separate this type of commands
 void clearArduinoMemory(){
-    system("ls");
     const char *arduinoCodePath = "../Arduino/obc-sets/clear";
-
     chdir(arduinoCodePath);
 
     char command[256];
-    system("ls");
-
     snprintf(command, sizeof(command), "make -f Makefile.clear");
     system(command);
+
+    const char *reset = "../../../build";
+    chdir(reset);
+
 }

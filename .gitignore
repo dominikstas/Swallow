@@ -1,1 +1,5 @@
 /build
+
+/Arduino/obc-sets/clear/*.hex
+/Arduino/obc-sets/clear/*.bin
+/Arduino/obc-sets/clear/*.o
