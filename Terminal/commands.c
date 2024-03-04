@@ -32,7 +32,6 @@ void execute(char *command) {
         runArduinoCode();
     } else if (strcmp(command, "clear") == 0) {
         clearArduinoMemory();
-    }
     } else {
         printf("Unknown command: %s\n", command);
     }
