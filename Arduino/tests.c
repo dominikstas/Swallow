@@ -4,6 +4,7 @@
 #include <termios.h>
 #include <stdlib.h>
 #include "tests.h"
+#include <unistd.h>
 
 // Function to test LED functionality
 void LEDTest(int times) {
@@ -59,4 +60,18 @@ void checkArduinoMemory() {
 
     // Display information about available memory
     printf("Estimated Available Memory: %zu bytes\n", availableMemory);
+}
+
+//to do: separate this type of commands
+void clearArduinoMemory(){
+    system("ls");
+    const char *arduinoCodePath = "../Arduino/obc-sets/clear";
+
+    chdir(arduinoCodePath);
+
+    char command[256];
+    system("ls");
+
+    snprintf(command, sizeof(command), "make -f Makefile.clear");
+    system(command);
 }

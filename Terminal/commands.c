@@ -28,9 +28,10 @@ void execute(char *command) {
         }
     } else if ((strcmp(command, "memory") == 0)) {
         checkArduinoMemory();
+    } else if ((strcmp(command, "clear") == 0)) {
+        clearArduinoMemory();
     } else if (strcmp(command, "run") == 0) {
         runArduinoCode();
-    
     } else {
         printf("Unknown command: %s\n", command);
     }
@@ -65,6 +66,7 @@ void runArduinoCode() {
     const char *arduinoCodePath = "../Arduino/obc-sets/diodes/diodes.ino";
 
     char command[256];
+    system("ls");
     snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno %s", arduinoCodePath);
     system(command);
 

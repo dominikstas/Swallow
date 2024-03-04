@@ -3,5 +3,6 @@
 
 void LEDTest(int times);
 void checkArduinoMemory();
+void clearArduinoMemory();
 
 #endif

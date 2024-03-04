@@ -1,0 +1,5 @@
+default:
+	avr-gcc -Os -DF_CPU=16000000UL -mmcu=atmega328p -c -c -o clear.o clear.c
+	avr-gcc -o clear.bin clear.o
+	avr-objcopy -O ihex -R .eeprom clear.bin clear.hex
+	sudo avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:clear.hex
