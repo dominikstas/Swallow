@@ -5,8 +5,7 @@
 
 #include "commands.h"
 #include "../Arduino/tests.h"
-
-
+#include "../Arduino/control.h"
 
 
 void execute(char *command) {
@@ -57,7 +56,7 @@ void help() {
     printf("help - show all commands\n");
     printf("echo [text] - write a text\n");
     printf("led [times] - LED blink test. \n");
-    //printf("memory - estimate available memory on Arduino (approximate)\n");
+    //printf("memory - estimate available memory on Arduino\n");
     //to do: fix ^
     printf("run - run diodes code. \n"); //to be changed
     printf("exit - turn off Swallow\n");

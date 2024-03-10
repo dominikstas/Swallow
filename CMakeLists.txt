@@ -3,6 +3,6 @@ project(Swallow C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(Swallow Terminal/terminal.c Terminal/commands.c Terminal/detect.c Arduino/tests.c)
+add_executable(Swallow Terminal/terminal.c Terminal/commands.c Terminal/detect.c Arduino/tests.c Arduino/control.c)
 
 target_compile_options(Swallow PRIVATE -Wall -Wextra)

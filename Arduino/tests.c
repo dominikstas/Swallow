@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
-#include <stdlib.h>
 #include <unistd.h>
 
 #include "tests.h"
@@ -40,40 +39,4 @@ void LEDTest(int times) {
     // Print a success message
     printf("Test successful\n");
     return;
-}
-
-void checkArduinoMemory() {
-    //this code aint working 
-    //to do: create another solution
-
-    // Create a dynamic array to estimate available memory
-    int* dummyArray = malloc(1000 * sizeof(int));
-
-    if (dummyArray == NULL) {
-        perror("Error allocating memory");
-        return;
-    }
-
-    // Calculate the amount of available memory
-    size_t availableMemory = 1000 * sizeof(int);
-
-    // Free dynamically allocated memory
-    free(dummyArray);
-
-    // Display information about available memory
-    printf("Estimated Available Memory: %zu bytes\n", availableMemory);
-}
-
-//to do: separate this type of commands
-void clearArduinoMemory(){
-    const char *arduinoCodePath = "../Arduino/obc-sets/clear";
-    chdir(arduinoCodePath);
-
-    char command[256];
-    snprintf(command, sizeof(command), "make -f Makefile.clear");
-    system(command);
-
-    const char *reset = "../../../build";
-    chdir(reset);
-
 }
