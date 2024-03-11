@@ -12,6 +12,8 @@ void LEDTest(int times) {
 
     // Open the serial port associated with Arduino (Assuming it's /dev/ttyACM0)
     // To do: make it avaliable to change the port
+
+    //if you use other port, change this code manually
     int fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY);
 
     // Check if opening the serial port was successful
@@ -27,7 +29,7 @@ void LEDTest(int times) {
     cfsetospeed(&options, B9600);
     tcsetattr(fd, TCSANOW, &options);
 
-    // Blink the PB5 diode  on Arduino 7 times
+    // Blink the PB5 diode  on Arduino x times
     for (int i = 0; i < times; i++) {
         write(fd, "Blink", 5);
         sleep(1);

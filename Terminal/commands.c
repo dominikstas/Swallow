@@ -67,6 +67,8 @@ void runArduinoCode() {
     //to do: correct readme after fixing this function
     //to do: take the set as an argument
     //to do: fix all the bugs this code generate
+
+    //if you use other set, change this code manually
     const char *arduinoCodePath = "../Arduino/obc-sets/diodes";
 
     char command[256];
@@ -74,6 +76,7 @@ void runArduinoCode() {
     snprintf(command, sizeof(command), "arduino-cli compile --fqbn arduino:avr:uno");
     system(command);
 
+    //if you use other port, change this code manually
     snprintf(command, sizeof(command), "arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno");
     system(command);
 

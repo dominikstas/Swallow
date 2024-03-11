@@ -17,6 +17,8 @@ int detectMicrocontroller() {
     // Arch Linux config
     
     // To do: add support for entering your port
+
+    //if you use other port, change this code manually
     int fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY);
     
     if (fd == -1) {
